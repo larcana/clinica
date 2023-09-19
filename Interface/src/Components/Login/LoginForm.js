@@ -87,7 +87,7 @@ const LoginForm = (props) => {
 
   return (
     <Card>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className={styles.form}>
         <h1>Ingresar:</h1>
         <div>
           <label htmlFor="email">Correo: </label>

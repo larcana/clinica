@@ -1,8 +1,10 @@
 import { useState } from "react";
 import HomeScreen from "./Components/Home/HomeScreen";
-import Card from "./Components/UI/Card";
 import LoginForm from "./Components/Login/LoginForm";
-import ErrorModal from "./Components/UI/ErrorModal"
+import ErrorModal from "./Components/UI/ErrorModal";
+import NavBar from "./Components/NavBar";
+
+import styles from "./App.module.css";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,17 +27,20 @@ function App() {
   };
 
   return (
-    <Card>
-      {!isValid && <ErrorModal onClose={isValidHandler}/>}
-      {isLoggedIn ? (
-        <HomeScreen onExit={isNotLoggedInHandler} />
-      ) : (
-        <LoginForm
-          onLoggedIn={loggedInHandler}
-          onFailedValidation={isNotValidHandler}
-        />
-      )}
-    </Card>
+    <>
+    {isLoggedIn && <NavBar onClose={isNotLoggedInHandler}/>}
+      <div className={styles.container}>
+        {!isValid && <ErrorModal onClose={isValidHandler} />}
+        {isLoggedIn ? (
+          <HomeScreen onExit={isNotLoggedInHandler} />
+        ) : (
+          <LoginForm
+            onLoggedIn={loggedInHandler}
+            onFailedValidation={isNotValidHandler}
+          />
+        )}
+      </div>
+    </>
   );
 }
 

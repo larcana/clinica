@@ -1,6 +1,9 @@
 .card{
+    justify-content: center;
+    align-items: center;
     border-style: solid;
-    border-color: antiquewhite;
-    background-color: aliceblue;
+    border-color: #000000;
+    background-color: #9caccc;
     border-radius: 4px;
+    padding: 1rem 3rem;
 }

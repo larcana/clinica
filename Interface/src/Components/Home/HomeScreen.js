@@ -1,9 +1,8 @@
 const HomeScreen = (props) => {
   return (
-    <div>
-      HomeScreen
-      <button onClick={props.onExit}>Salir</button>
-    </div>
+    <>
+      <h1>Home Screen</h1>
+    </>
   );
 };
 

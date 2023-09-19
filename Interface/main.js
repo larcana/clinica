@@ -11,7 +11,7 @@ function createWindow() {
 
   win.loadURL('http://localhost:3000'); // Carga la aplicación de React
 }
-//prueba
+//prueb
 app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
